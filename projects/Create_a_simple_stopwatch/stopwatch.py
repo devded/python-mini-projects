@@ -15,9 +15,8 @@ def counter_label(label):
                 tt = datetime.utcfromtimestamp(counter)
                 string = tt.strftime('%H:%M:%S')
                 display = string
-	
+
             label['text'] = display
-	
 			# label.after(arg1, arg2) delays by 
 			# first argument given in milliseconds 
 			# and then calls the function given as second argument. 
@@ -26,7 +25,6 @@ def counter_label(label):
 			# Delays by 1000ms=1 seconds and call count again. 
             label.after(1000, count)
             counter += 1
-	
 	# Triggering the start of the counter. 
     count()
 	
@@ -52,15 +50,12 @@ def Stop():
 
 # Reset function of the stopwatch 
 def Reset(label):
-	global counter
-	counter = 0
-	# If reset is pressed after pressing stop. 
-	if not running:
-		reset['state'] = 'disabled'
-		label['text'] = '00:00:00'
-	# If reset is pressed while the stopwatch is running. 
-	else:
-		label['text'] = '00:00:00'
+    global counter
+    counter = 0
+    	# If reset is pressed after pressing stop. 
+    if not running:
+        reset['state'] = 'disabled'
+    label['text'] = '00:00:00'
 
 
 root = Tkinter.Tk()
